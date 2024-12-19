@@ -1,0 +1,56 @@
+{
+  "name": "remote-1",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/remote-1/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/remote-1",
+        "main": "apps/remote-1/src/main.ts",
+        "tsConfig": "apps/remote-1/tsconfig.app.json",
+        "rspackConfig": "apps/remote-1/rspack.config.js",
+        "assets": ["apps/remote-1/src/favicon.ico", "apps/remote-1/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "remote-1:build:development",
+        "port": 3001
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "remote-1:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/remote-1/jest.config.ts"
+      }
+    }
+  }
+}
