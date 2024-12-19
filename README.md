@@ -90,7 +90,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-Special thanks to the RsPack team for creating a fantastic bundler and to the community for inspiring micro-frontend architectures.
+Special thanks to the RsPack team for creating a fantastic bundler and to the community for inspiring
+micro-frontend architectures and to https://github.com/RussellCanfield for his tutorials and example implementations.
 
 ## Future plans  
 
