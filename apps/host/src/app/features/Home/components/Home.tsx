@@ -1,12 +1,12 @@
 import { Suspense, lazy } from 'react';
 import { loadRemote } from '@module-federation/enhanced/runtime';
 
+import ComponentTwo from 'remote1/ComponentTwo';
+
 const Remote1 = lazy(() => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return loadRemote<{ default: any }>('remote1/ComponentTwo', {
+  return loadRemote<{ default: typeof ComponentTwo }>('remote1/ComponentTwo', {
     from: 'runtime',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  }) as Promise<{ default: any }>;
+  }) as Promise<{ default: typeof ComponentTwo }>;
 });
 
 const Home = () => {
