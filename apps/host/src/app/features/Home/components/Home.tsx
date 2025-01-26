@@ -1,17 +1,18 @@
 import { Suspense, lazy } from 'react';
 import { loadRemote } from '@module-federation/enhanced/runtime';
-// import ProductHero from 'remote1/ProductHero';
 
 const Remote1 = lazy(() => {
-  return loadRemote<{ default: any }>('remote1/ProductHero', {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return loadRemote<{ default: any }>('remote1/ComponentTwo', {
     from: 'runtime',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }) as Promise<{ default: any }>;
 });
 
 const Home = () => {
   return (
     <section>
-      <Suspense>{<Remote1  />}</Suspense>
+      <Suspense>{<Remote1 />}</Suspense>
     </section>
   );
 };

@@ -1,13 +1,13 @@
 // @ts-check
 
 /**
- * @type {import('@nrwl/devkit').ModuleFederationConfig}
+ *
  **/
 module.exports = {
   name: 'remote1',
   filename: 'remoteEntry.js',
   exposes: {
-    './ProductHero': './src/features/Products/components/ProductHero.tsx',
-    './Widget': './src/features/Products/components/Widget.tsx',
+    './ComponentOne': './src/features/feature-1/components/ComponentOne.tsx',
+    './ComponentTwo': './src/features/feature-1/components/ComponentTwo.tsx',
   },
 };

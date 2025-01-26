@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { ProductHero } from './features/Products';
+import { ComponentTwo } from './features/feature-1';
 
 const appElement = document.getElementById('app');
 
@@ -7,6 +7,6 @@ const appElement = document.getElementById('app');
 const root = createRoot(appElement!);
 root.render(
   <div>
-    <ProductHero />
+    <ComponentTwo />
   </div>
 );
