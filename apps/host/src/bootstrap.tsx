@@ -17,7 +17,7 @@ init({
 preloadRemote([
   {
     nameOrAlias: 'remote1',
-    exposes: ['Widget'],
+    exposes: ['ComponentTwo'],
   },
 ]);
 
