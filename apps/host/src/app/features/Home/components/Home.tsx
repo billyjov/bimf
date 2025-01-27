@@ -1,12 +1,15 @@
 import { Suspense, lazy } from 'react';
 import { loadRemote } from '@module-federation/enhanced/runtime';
 
-import ComponentTwo from 'remote1/ComponentTwo';
+// TODO: resolve issue with types decompression in runtime
+// import ComponentTwo from 'remote1/ComponentTwo';
 
 const Remote1 = lazy(() => {
-  return loadRemote<{ default: typeof ComponentTwo }>('remote1/ComponentTwo', {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return loadRemote<{ default: any }>('remote1/ComponentTwo', {
     from: 'runtime',
-  }) as Promise<{ default: typeof ComponentTwo }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }) as Promise<{ default: any }>;
 });
 
 const Home = () => {
