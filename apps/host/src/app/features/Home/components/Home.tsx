@@ -12,7 +12,7 @@ const Remote1 = lazy(() => {
 const Home = () => {
   return (
     <section className="container">
-      <Suspense>{<Remote1 />}</Suspense>
+      <Suspense>{<Remote1 label='Welcome to Types micro frontend' />}</Suspense>
     </section>
   );
 };

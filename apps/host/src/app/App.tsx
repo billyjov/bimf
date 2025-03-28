@@ -6,37 +6,29 @@ const router = createBrowserRouter([
     path: '/',
     element: (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
+        <nav className="navbar navbar-expand-lg navbar-light navbar-custom bg-info-subtle">
           <div className="container-fluid">
-            <span className="navbar-brand">Remote Management (Host)</span>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <span className="navbar-brand">BIMF (Host)</span>
+
+            <div id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <span className="nav-link">Remote 1</span>
+                  <button className="btn btn-info">Remote 1</button>
                 </li>
                 <li className="nav-item">
-                  <span className="nav-link">Remote 2</span>
+                  <button className="btn btn-info mx-2">Remote 2</button>
                 </li>
                 <li className="nav-item">
-                  <span className="nav-link">Remote 3</span>
+                  <button className="btn btn-info mx-2">Remote 3</button>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
 
-        <div>Hello From host </div>
+        <div className='container d-flex justify-content-center my-2'>
+          <h3>Welcome to Module Federation</h3>
+        </div>
         <Outlet />
       </div>
     ),

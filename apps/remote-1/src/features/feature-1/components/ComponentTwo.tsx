@@ -1,11 +1,24 @@
-const ComponentTwo = ({ label }: { label?: string }) => {
+const ComponentTwo = ({
+  label,
+  moreElement,
+}: {
+  label?: string;
+  moreElement?: string;
+}) => {
   return (
-    <section className="alert alert success">
-      <p>I'm a Remote demo and was built inside component two of remote-1 project</p>
+    <section className="alert alert-success">
+      <h4>
+        Hello{' '}
+        <span aria-label="emoji" role="img">
+          🤗
+        </span>
+        i'm a remote element and HAPPY to be here
+      </h4>
       <p>
-        im using React and Rspack Bundler
-        {label ?? ''}
+        I'm using <b>React</b> and <b>Rspack</b> Bundler
       </p>
+      <p>Following properties was set inside the host</p>
+      Label: {label ?? ''}
     </section>
   );
 };
